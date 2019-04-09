@@ -1,24 +1,19 @@
 <template>
-  <div>
-    <h1>{{title}}</h1>
-  </div>
+    <el-header style="text-align: center;font-size: 30px" class="el-header">
+      Library Management System
+    </el-header>
 </template>
 
 <script>
     export default {
-        name: "Header",
-        data(){
-          return {
-            title:"vue demo"
-          }
-        }
+        name: "Header"
     }
 </script>
 
 <style scoped>
-  div{
-    background: cornflowerblue;
-    padding: 6px;
-    line-height: 40px;
+  .el-header {
+    background-color: #66BAB7;
+    color: #ffffff;
+    line-height: 60px;
   }
 </style>

@@ -1,8 +1,8 @@
 <template>
-    <footer>
+    <el-footer height="100px" class="footer">
       <p>{{title}}</p>
       <p>{{copyright}}</p>
-    </footer>
+    </el-footer>
 </template>
 
 <script>
@@ -10,7 +10,7 @@
         name: "Footer",
         data(){
           return{
-            copyright:"Copytight 2017 vue demo",
+            copyright:"Copytight 2019 by Zeng",
             title: "demo"
           }
         }
@@ -18,9 +18,7 @@
 </script>
 
 <style scoped>
-  footer{
-    : bottom;
-    background: cornflowerblue;
-    padding: 6px;
+  .footer{
+    background: #66BAB7;
   }
 </style>

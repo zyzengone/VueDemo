@@ -1,13 +1,21 @@
 <template>
-  <div id="app">
+    <el-container style="border: 1px solid #eee" id="app">
+      <aside-tag/>
+      <el-container direction="vertical">
+        <header-tag/>
+        <el-main class="el-main">
+          <router-view/>
+        </el-main>
+        <footer-tag/>
+      </el-container>
 
-    <router-view></router-view>
-
-  </div>
+    </el-container>
 </template>
 
 <script>
-
+import Aside from './components/Aside';
+import Footer from './components/Footer';
+import Header from './components/Header'
 
   export default {
     name: 'App',
@@ -18,7 +26,9 @@
       }
     },
     components:{
-
+      "headerTag": Header,
+      "footerTag": Footer,
+      "asideTag": Aside
     }
   }
 
@@ -33,4 +43,7 @@
   color: #2c3e50;
   margin-top: 60px;
 }
+  .el-main{
+    min-height:700px;
+  }
 </style>

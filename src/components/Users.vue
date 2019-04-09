@@ -1,7 +1,7 @@
 <template>
   <div>
-    <el-row gutter="20">
-      <el-col :span="6" v-for="user in usersValue" id="list" class="distance">
+    <el-row :gutter="20">
+      <el-col :span="6" v-for="(user,index) in usersValue" :key="index" class="distance list">
 
         <div class="grid-content bg-purple"><span>{{user.name}}</span></div>
       </el-col>
