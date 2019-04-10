@@ -3,14 +3,15 @@
     <!--自动将驼峰式命名userTag转换为这种-->
 
     <users-tag v-bind:usersValue="users"></users-tag>
-
+      Count is {{$store.state.changeableNum}}
+      <button @click="getNewNum">+5</button>
   </div>
 </template>
 
 <script>
   //局部导入组件Users
   import Users from './Users'
-
+  import {mapGetters,mapActions} from 'vuex'
   export default {
     name: 'Home',
 
@@ -24,11 +25,7 @@
         users: []
       }
     },
-    computed: {
-      isShow() {
-        return this.$store.getters.isShow;
-      }
-    },
+    computed: mapGetters([]),
     created() {
       //测试
       this.axios.get("http://jsonplaceholder.typicode.com/users").then((response) => {
@@ -38,17 +35,7 @@
       //   this.users = response.data.content;
       // })
     },
-    watch: {
-      $route(to, from) { //跳转组件页面后，监听路由参数中对应的当前页面以及上一个页面
-        console.log(to);
-        if (to.name === '' || to.name === 'hello') { // to.name来获取当前所显示的页面，从而控制该显示或隐藏footerBar组件
-          this.$store.dispatch('showFooter') // 利用派发全局state.showFooter的值来控制        }else{
-          this.$store.dispatch('hideFooter')
-        } else {
-          this.$store.dispatch('hideFooter')
-        }
-      }
-    }
+    methods:mapActions(["getNewNum"])
   }
 </script>
 

@@ -6,7 +6,7 @@
         <el-main class="el-main">
           <router-view/>
         </el-main>
-        <footer-tag/>
+        <footer-tag v-if="isShow"/>
       </el-container>
 
     </el-container>
@@ -25,10 +25,24 @@ import Header from './components/Header'
 
       }
     },
+    computed:{
+      isShow(){
+        return this.$store.getters.isShow;
+      }
+    },
     components:{
       "headerTag": Header,
       "footerTag": Footer,
       "asideTag": Aside
+    },
+    watch:{
+      $route(to,from){
+        if (to.name === 'category'){
+          this.$store.dispatch('hideFooter');
+        } else {
+          this.$store.dispatch('showFooter');
+        }
+      }
     }
   }
 
@@ -37,11 +51,8 @@ import Header from './components/Header'
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
   .el-main{
     min-height:550px;

@@ -1,5 +1,5 @@
 <template>
-    <el-header style="text-align: center;font-size: 30px" class="el-header">
+    <el-header style="text-align: right;font-size: 20px" class="el-header">
       Library Management System
     </el-header>
 </template>

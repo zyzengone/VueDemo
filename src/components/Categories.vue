@@ -17,7 +17,7 @@
 
 <script>
     export default {
-        name: "Pictures",
+        name: "category",
         data(){
           return{
             categories:[],

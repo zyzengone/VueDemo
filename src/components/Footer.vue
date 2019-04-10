@@ -1,5 +1,5 @@
 <template>
-    <el-footer height="100px" class="footer">
+    <el-footer style="text-align: center" height="100px" class="footer">
       <p>{{title}}</p>
       <p>{{copyright}}</p>
     </el-footer>

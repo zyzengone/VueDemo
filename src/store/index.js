@@ -25,8 +25,8 @@ const mutations = {
   hide(state) {  //同上
     state.showFooter = false;
   },
-  newNum(state,sum){ //同上，这里面的参数除了state之外还传了需要增加的值sum
-    state.changableNum+=sum;
+  newNum(state){ //同上，这里面的参数除了state之外还传了需要增加的值sum
+    state.changeableNum=state.changeableNum+5;
   }
 };
 
@@ -37,8 +37,8 @@ const actions = {
   showFooter(context){
     context.commit('show')
   },
-  getNewNum(context,num){
-    context.commit('newNum',num)
+  getNewNum(context){
+    context.commit('newNum')
   }
 };
 const store = new Vuex.Store({
