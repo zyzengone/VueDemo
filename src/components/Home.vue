@@ -11,7 +11,6 @@
   //局部导入组件Users
   import Users from './Users'
 
-
   export default {
     name: 'Home',
 
@@ -31,12 +30,13 @@
       }
     },
     created() {
-      // this.$http.get("http://jsonplaceholder.typicode.com/users").then((data) => {
-      //   this.users = data.body;
-      // })
-      this.axios.get("users").then((response) => {
-        this.users = response.data.content;
+      //测试
+      this.axios.get("http://jsonplaceholder.typicode.com/users").then((response) => {
+        this.users = response.data;
       })
+      // this.axios.get("users").then((response) => {
+      //   this.users = response.data.content;
+      // })
     },
     watch: {
       $route(to, from) { //跳转组件页面后，监听路由参数中对应的当前页面以及上一个页面
@@ -53,12 +53,5 @@
 </script>
 
 <style>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-  }
+
 </style>

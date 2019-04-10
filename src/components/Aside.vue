@@ -9,8 +9,8 @@
                text-color="#fff"
                active-text-color="#ffd04b">
 
-          <el-menu-item  index="users"><i class="el-icon-menu"></i><span slot="title">用户</span></el-menu-item>
-          <el-menu-item  index="posts"><i class="el-icon-menu"></i><span slot="title">分类</span></el-menu-item>
+          <el-menu-item  index="/users"><i class="el-icon-menu"></i><span slot="title">用户</span></el-menu-item>
+          <el-menu-item  index="/posts"><i class="el-icon-menu"></i><span slot="title">分类</span></el-menu-item>
 
       </el-menu>
     </el-aside>

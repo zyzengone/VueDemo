@@ -35,9 +35,9 @@
           listDetail(category){
             this.$router.push({
               path:'/category',
-              name:'book',
+              name:'book',     //对应路由表中的路径和name
               params:{
-                id:category.id
+                id:category.id      //相当于拼接成了/category/id ,所跳转到的组件即可用this.$route.params.id取出id
               }
             })
           }

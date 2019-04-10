@@ -44,6 +44,6 @@ import Header from './components/Header'
   margin-top: 60px;
 }
   .el-main{
-    min-height:700px;
+    min-height:550px;
   }
 </style>

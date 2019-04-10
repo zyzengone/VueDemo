@@ -1,12 +1,12 @@
 <template>
   <div>
     <el-row :gutter="20">
-      <el-col :span="6" v-for="(user,index) in usersValue" :key="index" class="distance list">
+      <el-col :sm="6" :lg="3" v-for="(user,index) in usersValue" :key="index" class="distance list">
 
         <div class="grid-content bg-purple"><span>{{user.name}}</span></div>
       </el-col>
     </el-row>
-    <el-button type="primary" @click="deleteUser" class="btn">主要按钮</el-button>
+    <el-button type="primary" @click="addUser" class="btn">添加</el-button>
   </div>
 </template>
 
@@ -21,8 +21,7 @@
           }
         },
       methods:{
-          deleteUser:function () {
-            this.usersValue.pop();
+          addUser:function () {
           }
       }
     }

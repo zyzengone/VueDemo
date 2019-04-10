@@ -2,9 +2,9 @@
   <div>
     <h1>书籍</h1>
     <el-row :gutter="20">
-      <el-col :span="3" v-for="(book,index) in books" :key="index" class="col">
+      <el-col :sm="6" :lg="3" v-for="(book,index) in books" :key="index" class="col">
         <el-card :body-style="{ padding: '0px' }" class="card" shadow="hover">
-          <div style="padding: 14px;background-color: #909399;color: white">
+          <div style="padding: 8px;">
             <span>{{book.name}}</span>
           </div>
         </el-card>
@@ -24,8 +24,8 @@
         },
         created() {
           this.id = this.$route.params.id;
-          this.axios.get("categories/"+this.id).then((response)=>{
-            this.books = response.data
+          this.axios.get("categories/"+this.id+"/books").then((response)=>{
+            this.books = response.data.content;
           })
           // this.id = this.$route.params.userId;
           // this.axios.get("categories?userId="+this.id).then((response)=>{
