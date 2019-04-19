@@ -1,6 +1,7 @@
 <template>
 
     <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+      <div class="logo">VueDemo</div>
       <el-menu :default-active="this.$router.path"
                router
                class="el-menu-demo"
@@ -31,7 +32,15 @@
 </script>
 
 <style scoped>
-.el-icon-menu{
-  margin-left: 1px;
-}
+  .el-icon-menu{
+    margin-left: 1px;
+  }
+  .logo{
+    font-size: 20px;
+    background-color: #66BAB7;
+    color: #ffffff;
+    line-height: 60px;
+    text-align: center;
+    margin-right: 1px;
+  }
 </style>

@@ -1,12 +1,21 @@
 <template>
-    <el-header style="text-align: right;font-size: 20px" class="el-header">
-      Library Management System
+    <el-header style="text-align: right;font-size: 10px" class="el-header">
+      <router-link to="/login"><div v-bind="username">login</div></router-link>
     </el-header>
 </template>
 
 <script>
     export default {
-        name: "Header"
+      name: "Header",
+      data()
+      {
+        return{
+          username:''
+        }
+      },
+      mounted() {
+         this.username = sessionStorage.getItem('user')
+      }
     }
 </script>
 

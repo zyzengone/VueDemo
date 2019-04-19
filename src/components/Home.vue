@@ -1,16 +1,23 @@
 <template>
-  <div id="home">
+  <el-container style="border: 1px solid #eee" id="home">
     <!--自动将驼峰式命名userTag转换为这种-->
-
-    <users-tag v-bind:usersValue="users"></users-tag>
-      Count is {{$store.state.changeableNum}}
-      <button @click="getNewNum">+5</button>
-  </div>
+    <aside-tag/>
+    <el-container direction="vertical">
+      <header-tag/>
+      <el-main class="el-main">
+        <router-view/>
+      </el-main>
+      <footer-tag/>
+    </el-container>
+  </el-container>
 </template>
 
 <script>
   //局部导入组件Users
   import Users from './Users'
+  import Aside from './Aside';
+  import Footer from './Footer';
+  import Header from './Header'
   import {mapGetters,mapActions} from 'vuex'
   export default {
     name: 'Home',
@@ -18,6 +25,9 @@
     //注册主键
     components: {
       "usersTag": Users,
+      "asideTag": Aside,
+      "footerTag": Footer,
+      "headerTag":Header
 
     },
     data() {
@@ -39,6 +49,8 @@
   }
 </script>
 
-<style>
-
+<style scoped>
+  .el-main{
+    min-height: 700px;
+  }
 </style>
